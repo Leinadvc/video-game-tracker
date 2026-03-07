@@ -4,8 +4,8 @@ import sequelize from '../config/database';
 class User extends Model {
     public id!: number;
     public username!: string;
-    public password!: string; // In a real app, hash this!
-    public role!: string; // 'admin' | 'employee_recursos_humanos'
+    public password!: string;
+    public role!: string; // admin | gamer
 }
 
 User.init(
@@ -25,7 +25,7 @@ User.init(
             allowNull: false,
         },
         role: {
-            type: DataTypes.ENUM('admin', 'employee_recursos_humanos'),
+            type: DataTypes.ENUM('admin', 'gamer'),
             allowNull: false,
         },
     },

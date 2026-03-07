@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { login } from '../controllers/AuthController';
-import { getEmployees, createEmployee } from '../controllers/EmployeeController';
-import { getPayrolls, generatePayroll } from '../controllers/PayrollController';
+import { getGames, createGame } from '../controllers/GameController';
+import { getSessions, createSession } from '../controllers/PlaySessionController';
 import { authMiddleware } from '../middleware/auth';
 import { upload } from '../utils/fileUpload';
 
@@ -9,10 +9,12 @@ const router = Router();
 
 router.post('/login', login);
 
-router.get('/employees', authMiddleware, getEmployees);
-router.post('/employees', authMiddleware, upload.single('photo'), createEmployee);
+// videojuegos
+router.get('/games', authMiddleware, getGames);
+router.post('/games', authMiddleware, upload.single('cover'), createGame);
 
-router.get('/payrolls', authMiddleware, getPayrolls);
-router.post('/payrolls/generate', authMiddleware, generatePayroll);
+// sesiones de juego
+router.get('/sessions', authMiddleware, getSessions);
+router.post('/sessions', authMiddleware, createSession);
 
 export default router;
