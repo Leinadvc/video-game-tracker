@@ -1,6 +1,6 @@
 const token = localStorage.getItem("token");
 
-const API_URL = "http://localhost:3000/api";
+const API_URL="http://localhost:3000/api";
 
 document.getElementById("sessionForm").addEventListener("submit",async(e)=>{
 
@@ -8,6 +8,7 @@ e.preventDefault();
 
 const gameId=document.getElementById("gameId").value;
 const hoursPlayed=document.getElementById("hoursPlayed").value;
+const notes=document.getElementById("notes").value;
 
 await fetch(`${API_URL}/sessions`,{
 
@@ -18,7 +19,11 @@ headers:{
 Authorization:`Bearer ${token}`
 },
 
-body:JSON.stringify({gameId,hoursPlayed})
+body:JSON.stringify({
+gameId,
+hoursPlayed,
+notes
+})
 
 });
 

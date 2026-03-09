@@ -16,13 +16,18 @@ const sessions=await response.json();
 
 const container=document.getElementById("sessionList");
 
+container.innerHTML="";
+
 sessions.forEach(s=>{
 
 const div=document.createElement("div");
 
+div.className="card";
+
 div.innerHTML=`
-<p>Game ID: ${s.gameId}</p>
-<p>Hours: ${s.hoursPlayed}</p>
+<p><strong>Game ID:</strong> ${s.gameId}</p>
+<p><strong>Hours:</strong> ${s.hoursPlayed}</p>
+<p><strong>Notes:</strong> ${s.notes || "No notes"}</p>
 `;
 
 container.appendChild(div);
