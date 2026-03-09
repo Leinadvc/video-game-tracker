@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Create Game</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav>
+
+<h1>Game Tracker</h1>
+
+<div class="nav-links">
+
+<button onclick="window.location='dashboard.html'">Dashboard</button>
+
+<button onclick="window.location='games.html'">Games</button>
+
+<button onclick="window.location='create-game.html'">Add Game</button>
+
+<button onclick="window.location='add-session.html'">Add Session</button>
+
+<button onclick="window.location='sessions.html'">Sessions</button>
+
+<button id="logoutBtn">Logout</button>
+
+</div>
+
+</nav>
+
+<div class="container">
+
+<h2>Add Game</h2>
+
+<form id="gameForm">
+
+<input id="title" placeholder="Game title" required>
+<input id="platform" placeholder="Platform" required>
+<input id="genre" placeholder="Genre" required>
+
+<button class="primary">Create Game</button>
+
+</form>
+
+</div>
+
+<script src="js/create-game.js"></script>
+
+</body>
+</html>
