@@ -76,6 +76,11 @@ nav {
     z-index: 100;
 }
 
+.nav-links{
+display:flex;
+gap:10px;
+}
+
 nav h1 {
     font-size: 1.5rem;
     font-weight: 600;

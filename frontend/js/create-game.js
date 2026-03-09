@@ -1,5 +1,9 @@
 const token = localStorage.getItem("token");
 
+if(!token){
+window.location="index.html";
+}
+
 const API_URL = "http://localhost:3000/api";
 
 document.getElementById("gameForm").addEventListener("submit", async(e)=>{
@@ -26,3 +30,17 @@ body:JSON.stringify({title,platform,genre})
 window.location="games.html";
 
 });
+
+const logoutBtn=document.getElementById("logoutBtn");
+
+if(logoutBtn){
+
+logoutBtn.addEventListener("click",()=>{
+
+localStorage.removeItem("token");
+
+window.location="index.html";
+
+});
+
+}

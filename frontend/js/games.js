@@ -1,5 +1,9 @@
 const token = localStorage.getItem("token");
 
+if(!token){
+window.location="index.html";
+}
+
 const API_URL = "http://localhost:3000/api";
 
 async function fetchGames(){
@@ -35,3 +39,17 @@ gameList.appendChild(card);
 }
 
 fetchGames();
+
+const logoutBtn=document.getElementById("logoutBtn");
+
+if(logoutBtn){
+
+logoutBtn.addEventListener("click",()=>{
+
+localStorage.removeItem("token");
+
+window.location="index.html";
+
+});
+
+}

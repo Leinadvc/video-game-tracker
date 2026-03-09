@@ -1,6 +1,11 @@
 const token = localStorage.getItem("token");
 
+if(!token){
+window.location="index.html";
+}
+
 const API_URL="http://localhost:3000/api";
+
 
 document.getElementById("sessionForm").addEventListener("submit",async(e)=>{
 
@@ -30,3 +35,17 @@ notes
 alert("Session created");
 
 });
+
+const logoutBtn=document.getElementById("logoutBtn");
+
+if(logoutBtn){
+
+logoutBtn.addEventListener("click",()=>{
+
+localStorage.removeItem("token");
+
+window.location="index.html";
+
+});
+
+}

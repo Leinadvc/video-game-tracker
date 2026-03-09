@@ -1,5 +1,9 @@
 const token = localStorage.getItem('token');
 
+if(!token){
+window.location="index.html";
+}
+
 if (!token) {
     window.location.href = 'index.html';
 }
@@ -141,3 +145,17 @@ async function fetchPayrolls() {
 
 fetchEmployees();
 fetchPayrolls();
+
+const logoutBtn=document.getElementById("logoutBtn");
+
+if(logoutBtn){
+
+logoutBtn.addEventListener("click",()=>{
+
+localStorage.removeItem("token");
+
+window.location="index.html";
+
+});
+
+}
